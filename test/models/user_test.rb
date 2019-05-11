@@ -7,6 +7,7 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+
   test "don't create a user without name" do 
     assert_difference 'User.all.count', 0 do
       User.create bio: 'anything'

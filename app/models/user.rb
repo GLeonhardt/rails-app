@@ -4,5 +4,6 @@ class User < ApplicationRecord
 
     validates_numericality_of :age, greater_than: 0, allow_nil: true
 
-    has_many :contacts
+    has_many :contacts, dependent: :restrict_with_error
+    has_many :phones, through: :contacts
 end
